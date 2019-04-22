@@ -26,6 +26,12 @@ public class Geocode {
         client = new AsyncHttpClient();
     }
 
+    public ArrayList<Double> getArray(){
+        System.out.println("Lat: " + coord.get(0));
+        System.out.println("Long: " + coord.get(1));
+        return coord;
+    }
+
     public ArrayList<Double> getCoordinates(final GeocodeResponse callback){
 
         coord.clear();

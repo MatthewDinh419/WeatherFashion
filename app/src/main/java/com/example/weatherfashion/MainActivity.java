@@ -11,7 +11,12 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    static TextView test_text;
     private TextView mTextMessage;
+
+    static void setText(String text_to_view){
+        MainActivity.test_text.setText(text_to_view);
+    }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -42,19 +47,8 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-//        //DARK SKY AND GEOCODE TESTING
-//        //Convert city and state to coordinates
-//        Geocode geoguess = new Geocode("Boulder", "CO");
-//        ArrayList<Double> coord = geoguess.getCoordinates(new GeocodeResponse() {
-//            @Override
-//            public void onResponseReceived(ArrayList<Double> coord_response) {
-//                System.out.println("Lat: " + coord_response.get(0));
-//                System.out.println("Long: " + coord_response.get(1));
-//            }
-//        });
-//        //Should pass in new coordinates to darksky object
-//        Darksky darksky = new Darksky(37.8267,-122.4233);
-//        darksky.setWeather();
+        MainActivity.test_text = (TextView) findViewById(R.id.test_message);
+        Facade new_facade = new Facade("Boulder","CO");
     }
 
 }

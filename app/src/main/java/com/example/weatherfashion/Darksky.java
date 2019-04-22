@@ -27,7 +27,11 @@ public class Darksky {
         client = new AsyncHttpClient();
     }
 
-    public void setWeather(){
+    public Weather getWeather(){
+        return new_weather;
+    }
+
+    public Weather setWeather(final DarkskyResponse callback){
 
         client.get(BASE_URL + API_KEY + "/" + latitude + "," + longitude, new AsyncHttpResponseHandler() {
 
@@ -42,6 +46,8 @@ public class Darksky {
 
                     //Create new weather object
                     new_weather = new Weather(current.getDouble("temperature"));
+
+                    callback.onResponseReceived(new_weather);
                 }
                 catch(Exception e) {
                     // TODO: handle
@@ -53,5 +59,6 @@ public class Darksky {
                 System.out.println("Failure for GET request");
             }
         });
+        return new_weather;
     }
 }
