@@ -13,6 +13,7 @@ public class HomePage extends AppCompatActivity {
     static TextView temp_text;
     static TextView location_text;
 
+    //Updates text with weather information
     static void setText(String text_to_view, String City, String State){
 
         HomePage.temp_text.setText(text_to_view);
@@ -29,6 +30,8 @@ public class HomePage extends AppCompatActivity {
         location_text.setKeyListener(null);
 
         Facade.UpdateWeather();
+
+        // Bottom navbar that maps to outfit and profile pages
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

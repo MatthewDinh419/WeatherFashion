@@ -7,6 +7,7 @@ public class User{
     private String state;
     private String gender;
 
+    // constructor
     User(String new_name, int new_age, String new_city, String new_state, String new_gender){
         name = new_name;
         age = new_age;

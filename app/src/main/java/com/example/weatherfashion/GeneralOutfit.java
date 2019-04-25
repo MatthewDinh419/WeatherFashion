@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class GeneralOutfit extends AppCompatActivity {
     private static TextView clothing_text;
 
+    //Updates text information with clothing to wear
     public static void setTextView(ArrayList<Clothing> clothing_to_wear){
         for(int i = 0; i < clothing_to_wear.size(); i++){
             GeneralOutfit.clothing_text.append(clothing_to_wear.get(i).get_clothing_type());
@@ -31,6 +32,8 @@ public class GeneralOutfit extends AppCompatActivity {
 
         Facade.UpdateOutfits();
 
+
+        // Bottom navigation bar that maps to home and profile
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

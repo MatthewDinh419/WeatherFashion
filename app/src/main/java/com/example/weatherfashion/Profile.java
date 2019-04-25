@@ -44,6 +44,7 @@ public class Profile extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // create variables for the inputs
                 EditText input1 = findViewById(R.id.nameInput);
                 final String name = input1.getEditableText().toString();
                 EditText input2 = findViewById(R.id.ageInput);
@@ -52,13 +53,17 @@ public class Profile extends AppCompatActivity {
                 final String city = input3.getEditableText().toString();
                 EditText input4 = findViewById(R.id.stateInput);
                 final String state = input4.getEditableText().toString();
+                //create user class from input information
                 User temp_user = new User(name, age, city, state, gender);
                 Facade.new_user = temp_user;
+                // button to go to home
                 Intent i = new Intent(Profile.this, HomePage.class);
                 startActivity(i);
             }
         });
 
+
+        // Bottom nav bar to go to home and outfit pages
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

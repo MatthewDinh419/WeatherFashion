@@ -31,6 +31,7 @@ public class Darksky {
         return new_weather;
     }
 
+    //API Call
     public Weather setWeather(final DarkskyResponse callback){
 
         client.get(BASE_URL + API_KEY + "/" + latitude + "," + longitude, new AsyncHttpResponseHandler() {

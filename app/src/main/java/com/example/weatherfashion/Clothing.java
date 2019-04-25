@@ -4,7 +4,13 @@ import java.util.ArrayList;
 public class Clothing {
 
     public static ArrayList<Clothing> GenerateOutfit(double temperature, User person){
+
+        //Array of clothing to add
         ArrayList<Clothing> clothing_to_wear = new ArrayList<>();
+
+        //Get combinations of clothing to wear
+        //FACTORY DESIGN PATTERN
+        //Create clothing objects into array of clothing
         if(person.get_gender() == "male") {
             if (temperature <= 50.0) {
                 clothing_to_wear.add(new Joggers());

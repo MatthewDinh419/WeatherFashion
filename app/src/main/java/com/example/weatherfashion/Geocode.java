@@ -32,6 +32,7 @@ public class Geocode {
         return coord;
     }
 
+    //GEOCODE API
     public ArrayList<Double> getCoordinates(final GeocodeResponse callback){
 
         coord.clear();
