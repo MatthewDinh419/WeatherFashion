@@ -26,21 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="63dp" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="290dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginRight="61dp"
-        android:layout_marginBottom="106dp"
-        android:text="Try Again"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
+    <TextView
         android:id="@+id/editText4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

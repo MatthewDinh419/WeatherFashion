@@ -2,13 +2,13 @@ package com.example.weatherfashion;
 import java.util.ArrayList;
 
 public class Facade {
+    static User new_user;
+    static String temperature;
+    static Double rtemperature;
 
-    private String city;
-    private String state;
-
-    public void UpdateWeather(){
+    static public void UpdateWeather(){
         //Convert city and state to coordinates
-        final Geocode geoguess = new Geocode(city, state);
+        final Geocode geoguess = new Geocode(new_user.get_city(), new_user.get_state());
         final ArrayList<Double> test = geoguess.getCoordinates(new GeocodeResponse() {
             @Override
             public void onResponseReceived(ArrayList<Double> coord_response) {
@@ -17,7 +17,9 @@ public class Facade {
                 Weather new_weather = darksky.setWeather(new DarkskyResponse() {
                     @Override
                     public void onResponseReceived(Weather new_weather_pass) {
-                        HomePage.setText("Temperature: " + Double.toString(new_weather_pass.getTemperature()), city, state);
+                        temperature = Double.toString(new_weather_pass.getTemperature());
+                        rtemperature = Double.parseDouble(temperature);
+                        HomePage.setText("Temperature: " + temperature, new_user.get_city(), new_user.get_state());
                     }
                 });
             }
@@ -25,13 +27,10 @@ public class Facade {
     }
 
     static public void UpdateOutfits(){
-        User new_user = new User(12, "Male");
-        ArrayList<Clothing> clothing_to_wear = Clothing.GenerateOutfit(39, new_user);
+        ArrayList<Clothing> clothing_to_wear = Clothing.GenerateOutfit(rtemperature, new_user);
         GeneralOutfit.setTextView(clothing_to_wear);
     }
 
-    public Facade(String new_city, String new_state){
-        city = new_city;
-        state = new_state;
+    public Facade(){
     }
 }

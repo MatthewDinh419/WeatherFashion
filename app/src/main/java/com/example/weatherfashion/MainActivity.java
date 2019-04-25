@@ -27,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     mTextMessage.setText(R.string.title_home);
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.navigation_clothing:
+                    mTextMessage.setText("Clothing");
                     return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_profile:
                     mTextMessage.setText(R.string.title_notifications);
                     return true;
             }
@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         MainActivity.test_text = (TextView) findViewById(R.id.test_message);
-        Facade new_facade = new Facade("Boulder","CO");
     }
 
 }

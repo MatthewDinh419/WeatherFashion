@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,11 +8,15 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="291dp"
-        android:layout_height="356dp"
+        android:layout_width="289dp"
+        android:layout_height="560dp"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginRight="62dp"
         android:orientation="vertical">
 
         <TextView
@@ -32,7 +37,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/AgeInput"
+            android:id="@+id/ageInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/linearLayout2"
@@ -42,40 +47,58 @@
             android:inputType="number" />
 
         <EditText
-            android:id="@+id/emailInput"
+            android:id="@+id/cityInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Boulder, CO"
-            android:inputType="textPostalAddress" />
+            android:hint="City"
+            android:inputType="text" />
 
         <EditText
-            android:id="@+id/ZipcodeInput"
+            android:id="@+id/stateInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/linearLayout2"
             android:layout_centerHorizontal="true"
             android:ems="10"
-            android:hint="Zipcode"
-            android:inputType="number" />
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Male" />
+            android:hint="State"
+            android:inputType="text" />
 
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="wrap_content"
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Female" />
+            android:orientation="vertical">
+            <RadioButton android:id="@+id/radio_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton android:id="@+id/radio_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+
+        <!--<CheckBox-->
+            <!--android:id="@+id/checkBox"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Male" />-->
+
+        <!--<CheckBox-->
+            <!--android:id="@+id/checkBox2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Female" />-->
 
 
         <Button
-            android:id="@+id/submitButton"
+            android:id="@+id/register_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register" />
+            android:text="register" />
+
     </LinearLayout>
 
 

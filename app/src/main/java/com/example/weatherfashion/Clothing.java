@@ -5,7 +5,7 @@ public class Clothing {
 
     public static ArrayList<Clothing> GenerateOutfit(double temperature, User person){
         ArrayList<Clothing> clothing_to_wear = new ArrayList<>();
-        if(person.gender == "Male") {
+        if(person.get_gender() == "male") {
             if (temperature <= 50.0) {
                 clothing_to_wear.add(new Joggers());
                 clothing_to_wear.add(new Hoodie());
